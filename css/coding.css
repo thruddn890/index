@@ -1,0 +1,80 @@
+@font-face {
+    src: url("../fonts/BMJUA_ttf.ttf");
+    font-family: Jua;
+  }  /*여기 위의 부분은 폰트를 넣어주는 설정이고 2번줄 내용은
+  폰트를 가져오는 url지정경로 설정이며 3번줄 내용은 폰트이름을 지정해주는 것임!!*/
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #F0E8D9;
+  }
+  
+  h1 {   /*가운데정렬 h1.h2에 적용*/
+    text-align: center;
+    font-size: 64px;
+    color: #58595B;
+    margin-top: 75px;
+    margin-bottom: 30px;
+    font-family: Jua; /*위에서 적용시킨 폰트를 h1부분에 적용시켜줌*/
+  }
+  
+  
+  h2{
+    text-align: center;
+    font-size: 32px;
+    color: #58595B;
+    margin-bottom: 75px;
+    font-family: Jua; /*위에서 적용시킨 폰트를 h2부분에 적용시켜줌*/
+    }
+    
+    .food {
+      background-color: white;  /*배경색을 설정해주는것임 -> 코딩에빠진닭 부분에 대한 배경색 설정*/
+      /*div태그는 원래 가로길이를 전체를 차지함!!*/
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto; /*가운데정렬을위해 지정해줌*/
+      border-radius: 10px; /*이부분은 모서리를 둥글게 만들어주기위해서 작성 */
+      margin-bottom: 50px; /*이미지 사이사이의 간격을 두기 위해서 작성*/
+    }
+    
+    .food img {
+      border-top-right-radius: 10px;
+      border-top-left-radius:10px   /*처음모서리를 둥글게 위에서 설정해줘도
+      사진의 이미지부분에는 사진이 모서리의 둥근부분을 덮어주므로 새로 img설정 내용을작성해서
+      왼쪽위와 오른쪽 윗부분의 모서리를 따로 둥글게 설정하도록 작성해주어야함.
+      이방법말고 다른 방법으로는 .food 부분에 ===>overflow: hidden;을 적어주면된다.
+      그러면 그 부분의 div태그에서 삐져나오는 직각부분은 다없애줌.*/
+      
+    }
+    .food h3 {  /*food안에있는 h3에대한 설정을 적어주기위해 작성*/
+      color: #58595b;
+      font-size: 32px;
+      font-family: Jua;
+      margin-top: 0;
+      margin-bottom: 20px;
+      
+    }
+    .food .info{
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .food p {
+      color: #58595b;
+      font-size: 16px;
+      font-family: Jua;
+      margin-top: 0;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    
+    .food a {
+      color: #0000ee;
+      font-size: 16px;
+      font-family: Jua;
+      text-decoration: none; /*원래 a태그를 설정하면 기본적으로 글씨밑부분에
+      밑줄이 쳐져있는데 이것을 없애기 위해서 이내용을 작성해주는 것임*/
+    }

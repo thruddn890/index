@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Furniture Shop</title>
+    <meta charset="utf-8" />
+    <link href="css/sstyle.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="navbar">
+      <a href="#" id="logo">
+        <img src="images/logo.png" width="165">
+      </a>
+
+      <ul id="menu">
+        <li><a href="shopping.html">SHOP</a></li>
+        <li><a href="#">CART</a></li>
+        <li><a href="#">LOGIN</a></li>
+      </ul>
+    </div>
+
+    <div class="hero-header">
+      <div class="info">
+        <h1>블랙 프라이데이 슈퍼 세일</h1>
+        <h2>최대 50% 할인의 혜택을 받아보세요!</h2>
+        <button id="popup-trigger">쿠폰 받기</button>
+      </div>
+    </div>
+
+    <div id="popup" role="alert">
+      <div id="popup-container">
+        <h3>다운 완료!</h3>
+        <p>내 쿠폰함에서 확인하세요!</p>
+
+        <button id="close-btn">확인</button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script>
+      // 코드를 입력하세요.
+      //기능1 - 쿠폰받기 버튼을 눌렀을 때 팝업이 나타나게 하는것
+      $('#popup-trigger').on('click', popupFadeIn);
+      function popupFadeIn() {
+        $('#popup').fadeIn(500);
+      }
+      //기능2 - 팝업 창의 확인 버튼을 눌렀을 때 팝업이 사라지게 하는 것      
+      $('#close-btn').on('click', popupFadeOut);
+      function popupFadeOut() {
+        $('#popup').fadeOut(500);
+      }
+      //기능3 - esc 키를 눌렀을 때 팝업이 사라지게 하는 것 -키보드 관련 동작!
+      $(document).on('keydown', pushEscKey);
+      function pushEscKey(event) {
+        if(event.which=='27') { //esc key의 코드는 27이므로 이렇게 작성!
+          $('#popup').fadeOut(500);
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<!-- keydown 이벤트시 event 객체는 keycode라는 속성을 가지고 있어용
+
+키가 눌려지면 이 속성은 키의 소문자에 해당하는 ascii 코드라는걸 반환해주게 됩니당.
+
+이 때는 event.key가 아니라 event.which를 이용하여 사용하게 되어용.
+
+https://css-tricks.com/snippets/javascript/javascript-keycodes/에 정리되어
+
+있으니 참고해보시기 바랍니당^^
+
+필요하실 때 https://keycode.info를 이용해보셔도 좋을 것 같아용^^ -->
+

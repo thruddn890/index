@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Website</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/soso.css">
+</head>
+<body>
+  <img id="logo" src="images/logo.png" width="250" height="60">
+ 
+  <div id="menu">
+    <a id="home"  onclick="clickHome();">Home</a>
+    <a id="seoul" onclick="clickSeoul();">Seoul</a>
+    <a id="tokyo" onclick="clickTokyo();">Tokyo</a>
+    <a id="paris" onclick="clickParis();">Paris</a>
+  </div>
+
+  <img id="photo" src="images/home.png" width="90%" 
+  onmouseenter="mouseEnterPhoto();" onmouseleave="mouseLeavePhoto();">
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+  <script>
+    //$('#home').on('click', selectMenu); //$를 쓴다는건 jquery를 활용했다는 말임
+      //#을 이용하여 아이디가 home인 요소를 선택 , .on 메소드 사용
+      //on메소드에서 파라미터 click을 사용 -> 이거는 onclick의 사용과 같은 방법임.
+      //즉 home이라는 아이딜 가지고있는 태그에 click을 하면 clickHome이라는 함수를 실행하게 하란말임.
+  
+      $('#menu a').on('click', selectMenu);
+      //위의 줄 내용을 적어주면 위에 적었었던 4개 리스트는 적지않아도 된다.
+      //왜냐하면 a태그에 다 공통적으로 속해있으므로 한줄로 정리해서 전체적용시켜주면 된다.
+
+      $('#photo').on('mouseenter', mouseEnterPhoto);
+      $('#photo').on('mouseleave', mouseLeavePhoto);
+      //이부분에 이렇게 코드를 작성해주면 위의 img id작성 부분에서
+      //width 의 뒷부분은 삭제해줘도 되는 것임!!
+
+      $(document).on('keydown', selectMenu);
+        // 이 document의 keydown을 누르면 procee~키 이벤트의 함수가 실행되는 것임!!!
+    
+      function selectMenu(event) {
+          //console.log(event.currentTarget.id);
+        //var targetId = event.currentTarget.id;
+        //$('#photo').attr('src', 'images/seoul.png');
+        
+        var targetId = ''; //일단 targetId를 빈문자열로 설정해뒀다가
+        //만약 이벤트가 클릭이벤트라면 클릭된 링크의 아이디를 받아와서
+        //타겟id로 설정을 해주고 클릭이벤트가 아니고 키보드 이벤트라면
+        //어떤 키가 눌렸는지 확인해야 함!!
+        if (event.type === 'click') {
+            targetId = event.currentTarget.id;
+        } else if (event.type === 'keydown') {
+            if (event.key === '1') {
+            targetId = 'home';
+        } else if (event.key === '2') {
+          targetId = 'seoul'  
+        } else if (event.key === '3') {
+          targetId = 'tokyo'; 
+        } else if (event.key === '4') {
+          targetId = 'paris';  
+        }
+        }
+        
+
+        $('#photo').hide();
+        $('#photo').attr('src', 'images/' + targetId + '.png');
+        $('#photo').fadeIn(1500);
+        $('#menu a').css('font-weight', 'normal'); //이거는 다얇게 즉 normal인 상태로 만드는 것임 - 전체적인 설정!!
+        $('#' + targetId).css('font-weight', 'bold');  // 이 말뜻은 선택된 링크만 굵게 만드는 것임!!
+        //즉 targetId가 home이면 #home home이라는 아이디를 갖고 있는 a태그만 굵게만드는 것임!
+    }
+    //사진에 그림자
+    function mouseEnterPhoto() {
+        $('#photo').css('box-shadow', '5px 10px');
+    } 
+    function mouseLeavePhoto() {
+        $('#photo').css('box-shadow', 'none');
+    }
+    //키보드 이벤트 핸들링
+    function processKeyEvent(event) {
+        //console.log(event);
+        if (event['key'] === '1') { 
+        clickHome();
+       } else if (event['key'] === '2') {
+        clickSeoul();   
+       } else if (event['key'] === '3') {
+         clickTokyo();  
+       } else if (event['key'] === '4') {
+         clickParis();  
+       }
+    }
+  </script>
+</body>
+</html>

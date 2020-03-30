@@ -1,0 +1,320 @@
+@font-face {
+  src: url("../fonts/BMJUA_ttf.ttf");
+  font-family: Jua;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    min-width: 768px;
+  }
+  
+  /* navbar */
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 60px;
+  }
+  
+  .navbar img {
+    vertical-align: middle;
+  }
+  
+  .navbar .menu-right {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style: circle;
+    color: aqua;
+  }
+  
+  .navbar .menu-right li {
+    float: left;
+  }
+  
+  .navbar .menu-right li button {
+    color: white;
+    font-size: 20px;
+    font-family: Jua;
+    font-weight: 300;
+    text-decoration: none;
+    transition: color 1s;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .navbar .menu-right li {
+    margin-left: 30px;
+  }
+
+  /* vertical center */
+  
+
+  .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;  
+  }
+  
+  /*메시지 박스 설정 부분!!*/
+  .vertical-center {
+    display: inline-block;
+    vertical-align: middle;
+    color: white;
+    opacity: 0;
+    position: relative;
+    top: 80px;
+  }
+  
+  .sogal {
+    position: relative;
+    margin-top: 50px;
+    
+  }
+  /* header */
+  
+  .header {
+    background-image: url('../images/codename.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    min-height: 600px;
+    text-align: center;
+  }
+  
+  /*이미지 윗줄 글씨 부분*/
+  .header h1 {
+    font-size: 65px;
+    
+    margin: 0;
+    margin-bottom: 33px;
+  }
+  
+  /*이미지 아랫줄 글씨 부분*/
+  .header h2 {
+    font-size: 40px;
+    
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  /* about */
+
+  .about {
+    height: 100vh;
+    min-height: 600px;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .about h3 {
+    font-size: 40px;
+    font-family: Jua;
+    color: #4a4a4a;
+    margin: 0;
+    margin-bottom: 37px;
+  }
+  
+  .about p {
+    font-size: 20px;
+    font-family: Jua;
+    color: #4a4a4a;
+    margin: 0;
+    margin-bottom: 61px;
+  }
+  
+  .about .skillset {
+    display: inline-block;
+  }
+  
+  .about .skill:not(:last-child) {
+    margin-bottom: 17px;
+  }
+  
+  .about .skill .title {
+    display: inline-block;
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 35px;
+    font-size: 16px;
+    color: #4a4a4a;
+  }
+  
+
+  /*이거는 겉에 바 모양*/
+  .about .skill .bar {
+    display: inline-block;
+    vertical-align: middle;
+    width: 646px;
+    height: 33px;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    position: relative;
+    line-height: 33px;
+  }
+  
+
+  /*이거는 안에 퍼센트 바 모양*/
+  .about .skill .bar .inner-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 33px;
+    background: plum;
+    border-radius: 30px;
+  }
+  
+  /*이거는 안에있는 퍼센트바에 적혀있는 숫자 부분*/
+  .about .skill .bar .percentage {
+    font-size: 15px;
+    color: #9b9b9b;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 0;
+  }
+  
+  /* contact */
+  
+  .contact {
+    height: 90vh;
+    min-height: 600px;
+    background-color: whitesmoke;
+    text-align: center;
+    
+  }
+  
+  .contact h3 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Jua;
+    color: black;
+    margin: 0;
+    margin-bottom: 300px;
+   
+  }
+  
+  .contact p {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    margin-bottom: 61px;
+    
+  }
+  
+  .contact form {
+    display: inline-block;
+    vertical-align: middle;
+    width: 646px;
+    border-radius: 10px;
+    
+  }
+  
+  .contact input,
+  .contact textarea {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: solid 1px #ebebeb;
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+  
+  .contact input {
+    margin-bottom: 24px;
+  }
+  
+  .contact textarea {
+    resize: none;
+    height: 230px;
+  }
+
+ 
+
+  /*4번째 페이지 부분 - myprojects 부분들*/
+  
+  .project {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    min-height: 1000px;
+    background-color: black;
+  }
+
+  .food-container {
+    width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .food {
+    background-color: tan;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-bottom: 21px;
+    overflow: hidden;
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    position: relative;
+   
+  }
+
+  .food img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  .food h3 {  /*food안에있는 h3에대한 설정을 적어주기위해 작성*/
+    color: white;
+    font-size: 40px;
+    font-family: Jua;
+    margin-top: 0;
+    margin-bottom: 10px;
+    
+  }
+  .food .info{
+    padding: 20px;
+    text-align: center;
+  }
+  .food .info a:hover {
+    background-color: plum;
+  }
+  
+  .food p {
+    color: black;
+    font-size: 20px;
+    font-family: Jua;
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+  
+  .food a {
+    border-radius: 10px;
+    color:  black;
+    font-size: 30px;
+    font-family: Jua;
+    text-decoration: none; /*원래 a태그를 설정하면 기본적으로 글씨밑부분에
+    밑줄이 쳐져있는데 이것을 없애기 위해서 이내용을 작성해주는 것임*/
+  }
+
+  
